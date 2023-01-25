@@ -1,13 +1,13 @@
 array = [int(x) for x in input("Введите числа от 1 до 999 в любом порядке, через пробел: ").split()]
 
-def merge_sort(array):  # "разделяй"
-    if len(array) < 2:  # если кусок массива равен 2,
-        return array[:]  # выход из рекурсии
+def merge_sort(array):
+    if len(array) < 2: 
+        return array[:] 
     else:
-        middle = len(array) // 2  # ищем середину
-        left = merge_sort(array[:middle])  # рекурсивно делим левую часть
-        right = merge_sort(array[middle:])  # и правую
-        return merge(left, right)  # выполняем слияние
+        middle = len(array) // 2 
+        left = merge_sort(array[:middle])  
+        right = merge_sort(array[middle:]) 
+        return merge(left, right) 
 
 
 def merge(left, right):
@@ -58,7 +58,7 @@ while True:
     except ValueError:
         print("Нужно ввести число!")
     except Exception:
-        print("Неправильный диапазон!")
+        print("Введённое число не соответстует диапазону!")
 
 
 print(binary_search(array, element, 0,  len(array)))
